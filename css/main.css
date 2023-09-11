@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*   id가 컨텐츠면 아래 영역을 수행해라*/
+#contents{
+    border:1px solid red;
+    width: 970px;
+    height:auto;
+    margin: 0xp auto; /* 4개 입력시 상 우 하 좌의 여백*/
+    /*  0px 50px   2개만 적을시에는  상하 / 좌우 로 구분됨  */
+}
+
+#contents .main_img img{
+    width: 100%;
+    height: 100%; /* 360px*/ 
+}
+
+#contents .main_news{  /*  사진 뒤의 회색 배경영역 */
+    width: auto;
+    height: 240px;   /*  기존이미지는 240px 였으나 패딩을 상하 각 50px 부여해서 값 재설정 */
+    padding: 40px 50px;  /*  안쪽여백 (padding) 부여시 이미지 크기가 커지므로 width와 height 크기 재설정 필요*/
+    background: url(../images/gra_bg.png) repeat-x;   /*  x 방향으로 중복적용*/
+}
+
+#contents .news_type01{  /*  사진영역 */
+    width: 245px;
+    display: inline-block;
+    overflow: hidden;  /*  이 영역을 벗어나면 안보이게 처리함 */
+    border: 0px solid blue;
+    position: relative;  /*  영역의 상대성 부여*/
+}
+
+/* 가운데 사진 */
+#contents .news_type01.fc{ /* 아이디가 컨텐츠인 요소 중 클래스중 news_type01과 fc를 동시에 가진것 */
+                           /* 점을 바로 붙여서 써서 동시에 적용 되게함 .news_type01.fc  */
+    margin: auto 55px;
+}
+
+.title{
+    height: 20px;
+    text-indent: -9999px;
+    margin-bottom: 5px;  /*  글자와 사진 사이 글자의 하단부 여백 부여 */
+    background: url(../images/main_title.png) no-repeat;
+}
+
+#contents .fc .title { background-position: 0 -20px;}  /*  가운데 사진 */
+/*    fc 중에서 title을 찾아서   한칸띄고     .title*/
+#contents .fr .title { background-position: 0 -40px;}  /*  우측 사진 */
+
+.news_type01 .subject{
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;   
+    /* border: 1px solid red; */
+}
+/*   마우스가 영역 위로 올라갈때 변하는 기능  hover */
+.news_type01 .subject:hover{color: #ff5001;}
+
+.news_type01 .writer, new_type01{
+    font-size: 12px;
+    color: #777;
+}
+.news_type01 .writer, new_type{
+    font-size: 12px;
+    color: #777;
+    position: absolute;
+    right: 3px;  /* 우측정렬 3px 여유*/
+}
+
+.news_type01 #btn_play{
+    display: inline-block;
+    width: 52px;
+    height: 51px;
+    background:url(../images/icon_play.png) no-repeat;
+    position: absolute;
+    top: 75px;
+    left: 95px; 
+}
+
+.news_type01 #btn_play {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+}
