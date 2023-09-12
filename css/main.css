@@ -1,40 +1,46 @@
 @charset "utf-8";
 
-/*   id가 컨텐츠면 아래 영역을 수행해라*/
+/*   id가 컨텐츠면 아래 영역을 수행해라 */
 #contents{
     border:1px solid red;
     width: 970px;
-    height:auto;
+    height:360px;
     margin: 0xp auto; /* 4개 입력시 상 우 하 좌의 여백*/
     /*  0px 50px   2개만 적을시에는  상하 / 좌우 로 구분됨  */
 }
 
+/* id=contents의 상단 영역*/
 #contents .main_img img{
     width: 100%;
     height: 100%; /* 360px*/ 
 }
+/* 컨텐츠 - 상단 영역 종료*/
 
-#contents .main_news{  /*  사진 뒤의 회색 배경영역 */
+/* id=contents의 중앙 영역 - 사진 뒷배경 */
+/* 사진 사이 간격 적용 회색bar 이미지 사용*/
+#contents .main_news{  
     width: auto;
     height: 240px;   /*  기존이미지는 240px 였으나 패딩을 상하 각 50px 부여해서 값 재설정 */
     padding: 40px 50px;  /*  안쪽여백 (padding) 부여시 이미지 크기가 커지므로 width와 height 크기 재설정 필요*/
     background: url(../images/gra_bg.png) repeat-x;   /*  x 방향으로 중복적용*/
 }
-
+/* 컨텐츠 중앙영역 사진 배열 처리*/
 #contents .news_type01{  /*  사진영역 */
     width: 245px;
-    display: inline-block;
+    display: inline-block; /* 인라인 블록, 블록형태로 가로 배열 처리*/
     overflow: hidden;  /*  이 영역을 벗어나면 안보이게 처리함 */
-    border: 0px solid blue;
+    /* border: 0px solid blue; */
     position: relative;  /*  영역의 상대성 부여*/
 }
 
-/* 가운데 사진 */
-#contents .news_type01.fc{ /* 아이디가 컨텐츠인 요소 중 클래스중 news_type01과 fc를 동시에 가진것 */
-                           /* 점을 바로 붙여서 써서 동시에 적용 되게함 .news_type01.fc  */
-    margin: auto 55px;
+/* 컨텐츠 중앙영역 - 2번사진 */ 
+/* 2번 사진의 양쪽 여백으로 양쪽 동일 간격 유지 */
+/* 아이디가 컨텐츠 中 클래스news_type01과 fc를 동시에 가진것(.이 바로 붙어있음 */
+#contents .news_type01.fc{
+    margin: 0px 55px;
 }
 
+/* 컨텐츠 중앙영역 사진의 타이틀 처리*/
 .title{
     height: 20px;
     text-indent: -9999px;
@@ -42,30 +48,34 @@
     background: url(../images/main_title.png) no-repeat;
 }
 
+/* 2번 제목 사진의 y축 -20px로 이동*/
 #contents .fc .title { background-position: 0 -20px;}  /*  가운데 사진 */
-/*    fc 중에서 title을 찾아서   한칸띄고     .title*/
+/* 3번 제목 사진의 y축 -40px로 이동*/
 #contents .fr .title { background-position: 0 -40px;}  /*  우측 사진 */
 
+/* 사진아래 텍스트 영역 bold 처리*/
 .news_type01 .subject{
     height: 35px;
     line-height: 35px;
     font-weight: bold;   
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
-/*   마우스가 영역 위로 올라갈때 변하는 기능  hover */
-.news_type01 .subject:hover{color: #ff5001;}
 
-.news_type01 .writer, new_type01{
+/*  텍스트 영역 마우스가 영역 위로 올라갈때 색상 변경: hover */
+.news_type01 .subject:hover{color: #ff5001;}
+/* 텍스트 크기 변경*/
+.news_type01 .writer{
     font-size: 12px;
     color: #777;
 }
-.news_type01 .writer, new_type{
+
+.news_type01 .more_view{
     font-size: 12px;
     color: #777;
     position: absolute;
     right: 3px;  /* 우측정렬 3px 여유*/
 }
-
+/* 3번 사진의 재생버튼 위치 설정 */
 .news_type01 #btn_play{
     display: inline-block;
     width: 52px;
@@ -73,12 +83,62 @@
     background:url(../images/icon_play.png) no-repeat;
     position: absolute;
     top: 75px;
-    left: 95px; 
+    left: 95px;
 }
-
-.news_type01 #btn_play {
+.news_type01 #btn_play{
     display: block;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    border: 0x solid red;
 }
+/* 컨텐츠 중앙부분 종료*/
+
+/* 컨텐츠 하단 부분 시작*/
+.main_board{  
+    width: auto;
+    padding: 50px 15px
+
+
+
+
+    height: 120px;   /* 기존이미지는 (120px)에 상하단 패딩 각 40px 부여 */
+    padding: 40px 50px;  /* 안쪽여백 (padding) 부여시 이미지 크기가 커지므로 width와 height 크기 재설정 필요*/
+    background: url(../images/gra_bg.png) repeat-x;   /*  x 방향으로 중복적용*/
+
+#contents .board_type01{  /*  하단 3영역  인라인블럭으로 삼등분처리*/
+    width: 245px;
+    display: inline-block;
+    overflow: hidden;  /*  이 영역을 벗어나면 안보이게 처리함 */
+    border: 1px solid blue;
+    position: relative;  /*  영역의 상대성 부여*/
+
+
+
+
+
+
+#contents .board_type01{
+    width: 100%;
+    background: url(../images/gra_bg.png) repeat-x; /* x방향으로 중복적용*/
+}
+
+}
+
+
+#contents .board_type01.fc{ /* 아이디가 컨텐츠인 요소 중 클래스중 news_type01과 fc를 동시에 가진것 */
+    /* 점을 바로 붙여서 써서 동시에 적용 되게함 .news_type01.fc  */
+margin: auto 55px;
+}
+
+
+/* id=contents의 하단 영역 - 보드 뒷배경 */
+#contents .main_board{  
+    width: auto;
+    height: 100px;   /*  기존이미지는 240px 였으나 패딩을 상하 각 50px 부여해서 값 재설정 */
+    padding: 40px 50px;  /*  안쪽여백 (padding) 부여시 이미지 크기가 커지므로 width와 height 크기 재설정 필요*/
+    background: url(../images/gra_bg.png) repeat-x;   /*  x 방향으로 중복적용*/
+}
+/* 공지사항 영역 이미지 변경*/
+#contents .board_type01.fl .title { background-position: 0 -60px;}  /*  가운데 사진 */
+/* 트위터 이미지 변경*/
+#contents .board_type01.fc .title { background-position: 0 -80px;}  /*  우측 사진 */
